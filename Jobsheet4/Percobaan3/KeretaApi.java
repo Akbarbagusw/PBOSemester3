@@ -1,0 +1,46 @@
+public class KeretaApi {
+    private String nama;
+    private String Kelas;
+    private Pegawai masinis;
+    private Pegawai asisten;
+
+    public KeretaApi(String nama, String Kelas, Pegawai masinis) {
+        this.nama = nama;
+        this.Kelas = Kelas;
+        this.masinis = masinis;
+    }
+
+    public KeretaApi(String nama, String Kelas, Pegawai masinis, Pegawai asisten) {
+        this.nama = nama;
+        this.Kelas = Kelas;
+        this.masinis = masinis;
+        this.asisten = asisten;
+    }
+
+    public void setMasinis(Pegawai masinis) {
+        this.masinis = masinis;
+    }
+
+    public Pegawai getMasinis() {
+        return masinis;
+    }
+
+    public void setAsisten(Pegawai asisten) {
+        this.asisten = asisten;
+    }
+
+    public Pegawai getAsisten() {
+        return asisten;
+    }
+
+    public String info() {
+        String info = "";
+        info += "Nama: " + this.nama + "\n";
+        info += "Kelas: " + this.Kelas + "\n";
+        info += "Masinis: " + this.masinis.info() + "\n";
+        if (this.asisten != null) {
+            info += "Asisten: " + this.asisten.info() + "\n";
+        }
+        return info;
+    }
+}
